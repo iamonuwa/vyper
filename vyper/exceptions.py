@@ -62,14 +62,17 @@ class PythonSyntaxException(ParserException):
 
 
 class VariableDeclarationException(ParserException):
+    """ Throws invalid variable declaration exception """
     pass
 
 
 class StructureException(ParserException):
+    """ Throws invalid structure exception """
     pass
 
 
 class ConstancyViolationException(ParserException):
+    """ Throws exception when constant assumptions are violated during compile-time or run-time """
     pass
 
 
@@ -98,18 +101,24 @@ class EventDeclarationException(ParserException):
 
 
 class VersionException(ParserException):
+    """Throws version exception"""
     pass
 
 
 class SyntaxException(ParserException):
+    """Throws Syntax exception"""
     pass
 
 
 class ArrayIndexException(ParserException):
+    """Throws Array index exception"""
     pass
 
 
 class CompilerPanic(Exception):
+    """
+    Throw Compiler exception
+    """
 
     def __init__(self, message):
         self.message = message
@@ -119,6 +128,9 @@ class CompilerPanic(Exception):
 
 
 class JSONError(Exception):
+    """
+    Throws JSON error exception
+    """
 
     def __init__(self, msg, lineno=None, col_offset=None):
         super().__init__(msg)
